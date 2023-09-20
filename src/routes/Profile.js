@@ -38,7 +38,7 @@ const Profile = ({ refreshUser, userObj }) => {
     }
   };
   return (
-    <>
+    <div className="container">
       <form onSubmit={onSubmit}>
         <input
           type="text"
@@ -47,11 +47,15 @@ const Profile = ({ refreshUser, userObj }) => {
           onChange={onChange}
           placeholder="Display Name"
           value={newDisplayName}
+          autoFocus
+          className="formInput"
         />
-        <input type="submit" value="Update Profile" />
+        <input type="submit" value="Update Profile" className="formBtn mt10" />
       </form>
-      <button onClick={onSignOutClick}>Sign Out</button>
-    </>
+      <span className="formBtn cancelBtn logOut" onClick={onSignOutClick}>
+        Sign Out
+      </span>
+    </div>
   );
 };
 export default Profile;
